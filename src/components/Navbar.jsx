@@ -19,7 +19,16 @@ export default function Navbar() {
           </button>
         </>
       ) : (
-        <button onClick={() => loginWithRedirect()}>Log In</button>
+                <>
+          <button onClick={() => loginWithRedirect()}>Log In</button>
+          <button
+            onClick={() =>
+              loginWithRedirect({ authorizationParams: { connection: 'google-oauth2' } })
+            }
+          >
+            Continue with Google
+          </button>
+        </>
       )}
     </nav>
   )
